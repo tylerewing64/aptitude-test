@@ -1,0 +1,20 @@
+/**
+ For your convenience, TailwindCSS is already installed.
+ Simply comment/un-comment the line below depending on
+ if you would like to use Tailwind.
+ */
+
+/*@import 'tailwindcss';*/
+
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}

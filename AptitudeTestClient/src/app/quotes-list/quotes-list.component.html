@@ -1,0 +1,33 @@
+<h1>
+  Quotes List
+</h1>
+
+<a routerLink="new" class="new-quote-btn">New Quote</a>
+
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Premium</th>
+      <th>Rate</th>
+      <th>TIV</th>
+      <th>State</th>
+    </tr>
+    </thead>
+    <tbody>
+
+      @for (quote of quotes$ | async; track quote.id; let even = $even) {
+        <tr [ngClass]="even ? 'row-even' : 'row-odd'" [routerLink]="[quote.id]">
+          <td>{{quote.id}}</td>
+          <td>{{quote.name}}</td>
+          <td>{{quote.premium | currency: '$' : 'symbol' : '1.0-2'}}</td>
+          <td>{{quote.rate}}</td>
+          <td>{{quote.tiv | currency: '$' : 'symbol' : '1.0-2'}}</td>
+          <td>{{quote.state}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

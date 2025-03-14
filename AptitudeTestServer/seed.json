@@ -1,0 +1,261 @@
+﻿{
+  "Quotes": [
+    {"Id": 1, "Name": "Disneyland", "Tiv": 175000, "Premium": 542.5, "StateId": 5},
+    {"Id": 2, "Name": "Stars", "Tiv": 255000, "Premium": 663, "StateId": 43},
+    {"Id": 3, "Name": "John Doe", "Tiv": 162500, "Premium": 520, "StateId": 40},
+    {"Id": 4, "Name": "Panthers", "Tiv": 723000, "Premium": 4627.2, "StateId": 9},
+    {"Id": 5, "Name": "Rangers", "Tiv": 371250, "Premium": 1744.88, "StateId": 32}
+  ],
+  "States": [
+    {
+      "Id": 1,
+      "Abbreviation": "AL",
+      "Rate": 0.67
+    },
+    {
+      "Id": 2,
+      "Abbreviation": "AK",
+      "Rate": 0.15
+    },
+    {
+      "Id": 3,
+      "Abbreviation": "AZ",
+      "Rate": 0.85
+    },
+    {
+      "Id": 4,
+      "Abbreviation": "AR",
+      "Rate": 0.86
+    },
+    {
+      "Id": 5,
+      "Abbreviation": "CA",
+      "Rate": 0.31
+    },
+    {
+      "Id": 6,
+      "Abbreviation": "CO",
+      "Rate": 0.67
+    },
+    {
+      "Id": 7,
+      "Abbreviation": "CT",
+      "Rate": 0.34
+    },
+    {
+      "Id": 8,
+      "Abbreviation": "DE",
+      "Rate": 0.37
+    },
+    {
+      "Id": 9,
+      "Abbreviation": "FL",
+      "Rate": 0.64
+    },
+    {
+      "Id": 10,
+      "Abbreviation": "GA",
+      "Rate": 0.38
+    },
+    {
+      "Id": 11,
+      "Abbreviation": "HI",
+      "Rate": 0.52
+    },
+    {
+      "Id": 12,
+      "Abbreviation": "ID",
+      "Rate": 0.77
+    },
+    {
+      "Id": 13,
+      "Abbreviation": "IL",
+      "Rate": 0.87
+    },
+    {
+      "Id": 14,
+      "Abbreviation": "IN",
+      "Rate": 0.69
+    },
+    {
+      "Id": 15,
+      "Abbreviation": "IA",
+      "Rate": 0.54
+    },
+    {
+      "Id": 16,
+      "Abbreviation": "KS",
+      "Rate": 0.46
+    },
+    {
+      "Id": 17,
+      "Abbreviation": "KY",
+      "Rate": 0.62
+    },
+    {
+      "Id": 18,
+      "Abbreviation": "LA",
+      "Rate": 0.8
+    },
+    {
+      "Id": 19,
+      "Abbreviation": "ME",
+      "Rate": 0.41
+    },
+    {
+      "Id": 20,
+      "Abbreviation": "MD",
+      "Rate": 0.2
+    },
+    {
+      "Id": 21,
+      "Abbreviation": "MA",
+      "Rate": 0.25
+    },
+    {
+      "Id": 22,
+      "Abbreviation": "MI",
+      "Rate": 0.59
+    },
+    {
+      "Id": 23,
+      "Abbreviation": "MN",
+      "Rate": 0.18
+    },
+    {
+      "Id": 24,
+      "Abbreviation": "MS",
+      "Rate": 0.17
+    },
+    {
+      "Id": 25,
+      "Abbreviation": "MO",
+      "Rate": 0.19
+    },
+    {
+      "Id": 26,
+      "Abbreviation": "MT",
+      "Rate": 0.65
+    },
+    {
+      "Id": 27,
+      "Abbreviation": "NE",
+      "Rate": 0.59
+    },
+    {
+      "Id": 28,
+      "Abbreviation": "NV",
+      "Rate": 0.82
+    },
+    {
+      "Id": 29,
+      "Abbreviation": "NH",
+      "Rate": 0.47
+    },
+    {
+      "Id": 30,
+      "Abbreviation": "NJ",
+      "Rate": 0.23
+    },
+    {
+      "Id": 31,
+      "Abbreviation": "NM",
+      "Rate": 0.36
+    },
+    {
+      "Id": 32,
+      "Abbreviation": "NY",
+      "Rate": 0.47
+    },
+    {
+      "Id": 33,
+      "Abbreviation": "NC",
+      "Rate": 0.12
+    },
+    {
+      "Id": 34,
+      "Abbreviation": "ND",
+      "Rate": 0.25
+    },
+    {
+      "Id": 35,
+      "Abbreviation": "OH",
+      "Rate": 0.76
+    },
+    {
+      "Id": 36,
+      "Abbreviation": "OK",
+      "Rate": 0.46
+    },
+    {
+      "Id": 37,
+      "Abbreviation": "OR",
+      "Rate": 0.37
+    },
+    {
+      "Id": 38,
+      "Abbreviation": "PA",
+      "Rate": 0.66
+    },
+    {
+      "Id": 39,
+      "Abbreviation": "RI",
+      "Rate": 0.23
+    },
+    {
+      "Id": 40,
+      "Abbreviation": "SC",
+      "Rate": 0.32
+    },
+    {
+      "Id": 41,
+      "Abbreviation": "SD",
+      "Rate": 0.11
+    },
+    {
+      "Id": 42,
+      "Abbreviation": "TN",
+      "Rate": 0.54
+    },
+    {
+      "Id": 43,
+      "Abbreviation": "TX",
+      "Rate": 0.26
+    },
+    {
+      "Id": 44,
+      "Abbreviation": "UT",
+      "Rate": 0.76
+    },
+    {
+      "Id": 45,
+      "Abbreviation": "VT",
+      "Rate": 0.69
+    },
+    {
+      "Id": 46,
+      "Abbreviation": "VA",
+      "Rate": 0.22
+    },
+    {
+      "Id": 47,
+      "Abbreviation": "WA",
+      "Rate": 0.18
+    },
+    {
+      "Id": 48,
+      "Abbreviation": "WV",
+      "Rate": 0.11
+    },
+    {
+      "Id": 49,
+      "Abbreviation": "WI",
+      "Rate": 0.8
+    },
+    {
+      "Id": 50,
+      "Abbreviation": "WY",
+      "Rate": 0.15
+    }
+  ]
+}
