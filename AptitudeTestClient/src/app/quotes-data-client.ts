@@ -9,7 +9,7 @@ import {State} from './models/state';
 })
 export class QuotesDataClient {
   private readonly http = inject(HttpClient);
-  private readonly url = 'https://localhost:44363/api/quotes';
+  private readonly url = 'https://localhost:7190/api/quotes';
 
   getAllQuotes(): Observable<Quote[]> {
     return this.http.get<Quote[]>(this.url);
