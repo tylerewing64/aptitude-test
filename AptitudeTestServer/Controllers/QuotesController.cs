@@ -12,6 +12,11 @@ public class QuotesController : ControllerBase
 {
     private readonly ApplicationDbContext _context;
     private readonly ILogger<QuotesController> _logger;
+
+    private decimal calculatePremium(decimal tiv, decimal rate){ 
+    
+        return  (tiv * rate) / 100;
+    }
     
     public QuotesController(ApplicationDbContext context, ILogger<QuotesController> logger)
     {
@@ -21,7 +26,10 @@ public class QuotesController : ControllerBase
 
     [HttpGet]
     public async Task<IActionResult> GetAll()
+    
     {
+      
+       
         var quotes = await _context.Quotes
             .Select(q => new QuoteDto(
                 q.Id,
@@ -32,6 +40,7 @@ public class QuotesController : ControllerBase
                 q.State.Abbreviation,
                 q.State.Id))
             .ToListAsync();
+           
         return Ok(quotes);
     }
     
@@ -52,8 +61,92 @@ public class QuotesController : ControllerBase
     }
     
     // Implement POST
+    [HttpPost]
+    public async Task<IActionResult> AddQuote([FromBody] CreateQuote quote){ 
+        var state = await _context.States.FindAsync(quote.StateId);
+
+        //Error handling
+        if(quote == null){ 
+            return BadRequest("Quote");
+        }
+
+        if(quote.Tiv == 0){ 
+            return BadRequest("No TIV Provided");
+        }
+
+        if(quote.StateId == 0){ 
+            return BadRequest("No State Id Provided");
+        }
+        
+        if(string.IsNullOrEmpty(quote.Name)){ 
+            return BadRequest("No Name Provided");
+        }
+
+        var newQuote = new Quote{ 
+            Name = quote.Name,
+            Tiv = quote.Tiv,
+            StateId = quote.StateId,
+            Premium = calculatePremium(quote.Tiv, state.Rate)
+        };
+        
+        await _context.Quotes.AddAsync(newQuote);
+        await _context.SaveChangesAsync();
+        return Ok("Succesfully stored quote");
+     
+        
+    }
+
     
     // Implement PUT
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> EditQute([FromBody] CreateQuote updatedQuote, [FromRoute] int id)
+    {
+        var existingQuote = await _context.Quotes.FindAsync(id);
+
+        if (existingQuote == null)
+        {
+            return NotFound("Cannot find quote with id specified!");
+        }
+
+        // Fetch the state based on updated StateId
+        var state = await _context.States.FindAsync(updatedQuote.StateId);
+
+        if (state == null || state.Rate == 0)
+        {
+            return BadRequest("Invalid state or state rate.");
+        }
+
+        // Error handling for Tiv, StateId, and Name
+        if (updatedQuote.Tiv <= 0)
+        {
+            return BadRequest("No valid Tiv provided");
+        }
+
+        if (updatedQuote.StateId == 0)
+        {
+            return BadRequest("No valid StateId provided");
+        }
+
+        if (string.IsNullOrEmpty(updatedQuote.Name))
+        {
+            return BadRequest("No Name provided");
+        }
+
+        // Update the fields
+        existingQuote.Name = updatedQuote.Name;
+        existingQuote.Tiv = updatedQuote.Tiv;
+        existingQuote.StateId = updatedQuote.StateId;
+
+        // Calculate and set the premium
+        existingQuote.Premium = calculatePremium(updatedQuote.Tiv, state.Rate);
+        Console.WriteLine($"Updated Premium: {existingQuote.Premium}");
+
+        // Save changes
+        await _context.SaveChangesAsync();
+
+        return Ok("Quote updated successfully.");
+    }
+
     
     // To supply a select / dropdown?
     [HttpGet("states")]
