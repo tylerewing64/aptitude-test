@@ -1,3 +1,35 @@
 hr {
   margin: 1rem 0;
 }
+
+form{ 
+  display:flex; 
+  flex-direction: column;
+
+}
+
+label{ 
+  font-style: italic;
+}
+input, select{ 
+  padding:5px;
+  border:none;
+  border-bottom: 1px solid black;
+  outline:none;
+  margin-bottom:5px;
+}
+
+button{ 
+  background-color: #374151;
+  color:white;
+  border:none;
+  outline:none;
+  padding:10px;
+  cursor:pointer;
+}
+
+button:hover{ 
+  background-color: #4b5563;
+}
+
+

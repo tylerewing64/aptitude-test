@@ -91,7 +91,12 @@ public class QuotesController : ControllerBase
         
         await _context.Quotes.AddAsync(newQuote);
         await _context.SaveChangesAsync();
-        return Ok("Succesfully stored quote");
+
+           
+        var message = new { 
+            Mesage = "Succesfully stored quote"
+        };
+        return Ok(message);
      
         
     }
@@ -139,12 +144,15 @@ public class QuotesController : ControllerBase
 
         // Calculate and set the premium
         existingQuote.Premium = calculatePremium(updatedQuote.Tiv, state.Rate);
-        Console.WriteLine($"Updated Premium: {existingQuote.Premium}");
 
         // Save changes
         await _context.SaveChangesAsync();
+        
+        var message = new { 
+            Mesage = "Quote updated succesfully"
+        };
 
-        return Ok("Quote updated successfully.");
+        return Ok(message);
     }
 
     

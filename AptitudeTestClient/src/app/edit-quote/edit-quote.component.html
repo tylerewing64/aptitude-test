@@ -1,8 +1,17 @@
-<p>Implement this page to allow editing an existing quote</p>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
-<!-- Add form here -->
+    <label for = "name" >Name:</label>
+    <input formControlName = "name" required />
+    <label for = "tiv">TIV:</label>
+    <input formControlName = "tiv" required />
+    <label for= "stateId">State:</label>
+    <select formControlName = "stateId" required>
+        <option *ngFor="let state of states" [value]="state.id">
+            {{ state.abbreviation }}
+          </option>
+    </select>
+    <button type = 'submit'>Submit</button>
 </form>
 
 <hr>
-<pre>Form value: {{form.value | json}}</pre>
+<!-- <pre>Form value: {{form.value | json}}</pre> -->

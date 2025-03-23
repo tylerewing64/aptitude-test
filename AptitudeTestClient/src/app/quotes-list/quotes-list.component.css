@@ -52,6 +52,7 @@ thead > tr > th {
 tr {
   border-bottom: 1px solid #d1d5db;
   transition: background-color 0.2s ease-in-out;
+  cursor:pointer;
 }
 
 tr:hover {
